@@ -1,7 +1,7 @@
 
 # FinSight - Personal Finance Tracker
 
-A modern, comprehensive personal finance tracking application built with React, TypeScript, and Tailwind CSS. FinSight helps you manage your expenses, set budgets, and gain insights into your spending patterns with beautiful data visualizations. The Project is completed all the stages which are also mentioned below.
+A modern, comprehensive personal finance tracking application built with React, TypeScript, and Tailwind CSS. FinSight helps you manage your expenses, set budgets, and gain insights into your spending patterns with beautiful data visualizations. The Project is completed all 3 stages which are also mentioned below.
 
 ## ✨ Features
 
