@@ -1,33 +1,48 @@
 
-# FinSight - Personal Finance Tracker
+# FinSight - Full-Stack Personal Finance Tracker
 
-A modern, comprehensive personal finance tracking application built with React, TypeScript, and Tailwind CSS. FinSight helps you manage your expenses, set budgets, and gain insights into your spending patterns with beautiful data visualizations. The Project is completed all 3 stages which are also mentioned below.
+A modern, comprehensive personal finance tracking application built with **React, TypeScript, Node.js, Express, and MongoDB**. FinSight is now a complete full-stack application with user authentication, persistent data storage, and secure API endpoints. Track your expenses, set budgets, and gain insights into your spending patterns with beautiful data visualizations.
+
+## 🚀 **Full-Stack Architecture**
+- **Frontend**: React + TypeScript + Vite + Tailwind CSS + shadcn/ui
+- **Backend**: Node.js + Express.js + JWT Authentication
+- **Database**: MongoDB with Mongoose ODM
+- **Deployment**: Vercel (Frontend) + Railway (Backend) + MongoDB Atlas
 
 ## ✨ Features
+
+### 🔐 **User Authentication & Security**
+- ✅ Secure user registration and login system
+- ✅ JWT-based authentication with 30-day token expiration
+- ✅ Password hashing with bcrypt
+- ✅ Protected routes and API endpoints
+- ✅ User session management with automatic logout
 
 ### 📊 Stage 1 - Transaction Management
 - ✅ Add, edit, and delete transactions with full validation
 - ✅ Categorize transactions (Food & Dining, Transportation, Shopping, etc.)
 - ✅ Support for both expenses and income
 - ✅ Monthly expense visualization with interactive bar charts
-- ✅ Form validation for all required fields and data types
+- ✅ **Persistent data storage** - All transactions saved to MongoDB
+- ✅ User-specific transaction isolation
 
 ### 🎯 Stage 2 - Categories & Dashboard
 - ✅ Predefined spending categories with color coding
 - ✅ Interactive pie charts for category-wise expense breakdown
-- ✅ Comprehensive dashboard featuring:
-  - Total monthly expenses and income
-  - Budget vs actual spending
+- ✅ **Real-time dashboard** featuring:
+  - Total monthly expenses and income from database
+  - Budget vs actual spending with live updates
   - Category-wise spending analysis
-  - Recent transactions overview
+  - Recent transactions overview with user-specific data
 
 ### 💰 Stage 3 - Advanced Budgeting & Insights
-- ✅ Set and manage monthly budgets per category
+- ✅ Set and manage monthly budgets per category with database persistence
 - ✅ Real-time budget vs actual comparison with progress bars
-- ✅ Smart spending insights including:
+- ✅ **Smart spending insights** including:
   - Over-budget alerts with visual indicators
   - Top spending category identification
-  - Daily spending averages
+  - Daily spending averages calculated from user's data
+  - Cross-device synchronization through cloud storage
   - Budget surplus/deficit tracking
 - ✅ AI-powered financial recommendations
 
@@ -52,37 +67,74 @@ A modern, comprehensive personal finance tracking application built with React, 
 ### Installation
 
 1. **Clone the repository**
+## 🚀 **Getting Started**
+
+### Prerequisites
+- **Node.js** (v18 or higher)
+- **MongoDB** (local installation or MongoDB Atlas)
+- **npm** or **yarn**
+
+### Local Development Setup
+
+1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd finsight
+   cd finsight-personal-finance-tracker
    ```
 
 2. **Install dependencies**
    ```bash
+   # Install frontend dependencies
    npm install
-   # or
-   yarn install
+
+   # Install backend dependencies
+   cd server
+   npm install
+   cd ..
    ```
 
-3. **Start the development server**
+3. **Set up environment variables**
    ```bash
-   npm run dev
-   # or
-   yarn dev
+   # Backend environment (.env in server directory)
+   cd server
+   cp .env.example .env
+   # Edit .env with your MongoDB URI and JWT secret
+   
+   # Frontend environment (.env.development in root)
+   VITE_API_URL=http://localhost:5001/api
    ```
 
-4. **Open your browser**
-   Navigate to `http://localhost:8080` to view the application.
+4. **Start MongoDB** (if running locally)
+   ```bash
+   mongod
+   ```
+
+5. **Start the development servers**
+   ```bash
+   # Terminal 1: Start backend server
+   cd server
+   npm run dev
+
+   # Terminal 2: Start frontend server
+   npm run dev
+   ```
+
+6. **Open your browser**
+   - **Frontend**: `http://localhost:8080`
+   - **Backend API**: `http://localhost:5001/api`
+
+### 🌐 **Production Deployment**
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
 
 ### Build for Production
 
 ```bash
+# Build frontend
 npm run build
-# or
-yarn build
-```
 
-The built files will be available in the `dist` directory.
+# The built files will be available in the `dist` directory
+```
 
 ## 📁 Project Structure
 
