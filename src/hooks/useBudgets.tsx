@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { budgetsAPI } from '@/utils/api';
-import { Budget } from '@/types/finance';
-import { useToast } from '@/hooks/use-toast';
+import { Budget, Category } from '../types/finance';
+import { budgetsAPI } from '../utils/api';
+import { useToast } from './use-toast';
 
 export interface ApiBudget {
   _id: string;
@@ -17,7 +17,7 @@ export interface ApiBudget {
 // Convert API budget to frontend budget format
 const convertToFrontendBudget = (apiBudget: ApiBudget): Budget => ({
   id: apiBudget._id,
-  category: apiBudget.category as any,
+  category: apiBudget.category as Category,
   amount: apiBudget.amount,
 });
 
